@@ -1,6 +1,6 @@
 ﻿namespace e_agenda.WinApp
 {
-    partial class ListagemTarefa
+    partial class TelaPrincipal
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,11 +29,8 @@
         private void InitializeComponent()
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.btn_ExcluirTarefa = new System.Windows.Forms.Button();
-            this.btn_EditarTarefa = new System.Windows.Forms.Button();
-            this.btn_InserirTarefa = new System.Windows.Forms.Button();
-            this.list_Tarefas = new System.Windows.Forms.ListBox();
+            this.tabTarefa = new System.Windows.Forms.TabPage();
+            this.panel_Tarefas = new System.Windows.Forms.Panel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btn_ExcluirContato = new System.Windows.Forms.Button();
             this.btn_EditarContato = new System.Windows.Forms.Button();
@@ -45,14 +42,14 @@
             this.btn_InserirCompromisso = new System.Windows.Forms.Button();
             this.list_Compromissos = new System.Windows.Forms.ListBox();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.tabTarefa.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabTarefa);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -60,67 +57,28 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(650, 389);
+            this.tabControl1.Size = new System.Drawing.Size(780, 389);
             this.tabControl1.TabIndex = 3;
             // 
-            // tabPage1
+            // tabTarefa
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.tabPage1.Controls.Add(this.btn_ExcluirTarefa);
-            this.tabPage1.Controls.Add(this.btn_EditarTarefa);
-            this.tabPage1.Controls.Add(this.btn_InserirTarefa);
-            this.tabPage1.Controls.Add(this.list_Tarefas);
-            this.tabPage1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.tabPage1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.tabPage1.Location = new System.Drawing.Point(4, 24);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(642, 361);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Tarefas";
+            this.tabTarefa.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.tabTarefa.Controls.Add(this.panel_Tarefas);
+            this.tabTarefa.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.tabTarefa.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.tabTarefa.Location = new System.Drawing.Point(4, 24);
+            this.tabTarefa.Name = "tabTarefa";
+            this.tabTarefa.Padding = new System.Windows.Forms.Padding(3);
+            this.tabTarefa.Size = new System.Drawing.Size(772, 361);
+            this.tabTarefa.TabIndex = 0;
+            this.tabTarefa.Text = "Tarefas";
             // 
-            // btn_ExcluirTarefa
+            // panel_Tarefas
             // 
-            this.btn_ExcluirTarefa.Location = new System.Drawing.Point(412, 35);
-            this.btn_ExcluirTarefa.Name = "btn_ExcluirTarefa";
-            this.btn_ExcluirTarefa.Size = new System.Drawing.Size(131, 40);
-            this.btn_ExcluirTarefa.TabIndex = 3;
-            this.btn_ExcluirTarefa.Text = "EXCLUIR";
-            this.btn_ExcluirTarefa.UseVisualStyleBackColor = true;
-            this.btn_ExcluirTarefa.Click += new System.EventHandler(this.btn_ExcluirTarefa_Click);
-            // 
-            // btn_EditarTarefa
-            // 
-            this.btn_EditarTarefa.Location = new System.Drawing.Point(206, 35);
-            this.btn_EditarTarefa.Name = "btn_EditarTarefa";
-            this.btn_EditarTarefa.Size = new System.Drawing.Size(131, 40);
-            this.btn_EditarTarefa.TabIndex = 2;
-            this.btn_EditarTarefa.Text = "EDITAR";
-            this.btn_EditarTarefa.UseVisualStyleBackColor = true;
-            this.btn_EditarTarefa.Click += new System.EventHandler(this.btn_EditarTarefa_Click);
-            // 
-            // btn_InserirTarefa
-            // 
-            this.btn_InserirTarefa.Location = new System.Drawing.Point(8, 35);
-            this.btn_InserirTarefa.Name = "btn_InserirTarefa";
-            this.btn_InserirTarefa.Size = new System.Drawing.Size(131, 40);
-            this.btn_InserirTarefa.TabIndex = 1;
-            this.btn_InserirTarefa.Text = "INSERIR";
-            this.btn_InserirTarefa.UseVisualStyleBackColor = true;
-            this.btn_InserirTarefa.Click += new System.EventHandler(this.btn_InserirTarefa_Click);
-            // 
-            // list_Tarefas
-            // 
-            this.list_Tarefas.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
-            this.list_Tarefas.BackColor = System.Drawing.SystemColors.Window;
-            this.list_Tarefas.FormattingEnabled = true;
-            this.list_Tarefas.ItemHeight = 15;
-            this.list_Tarefas.Location = new System.Drawing.Point(8, 94);
-            this.list_Tarefas.Name = "list_Tarefas";
-            this.list_Tarefas.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.list_Tarefas.ScrollAlwaysVisible = true;
-            this.list_Tarefas.Size = new System.Drawing.Size(624, 259);
-            this.list_Tarefas.TabIndex = 0;
+            this.panel_Tarefas.Location = new System.Drawing.Point(0, 3);
+            this.panel_Tarefas.Name = "panel_Tarefas";
+            this.panel_Tarefas.Size = new System.Drawing.Size(772, 358);
+            this.panel_Tarefas.TabIndex = 0;
             // 
             // tabPage2
             // 
@@ -134,7 +92,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(642, 361);
+            this.tabPage2.Size = new System.Drawing.Size(772, 361);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Contatos";
             // 
@@ -185,7 +143,7 @@
             this.tabPage3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.tabPage3.Location = new System.Drawing.Point(4, 24);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(642, 361);
+            this.tabPage3.Size = new System.Drawing.Size(772, 361);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Compromissos";
             // 
@@ -226,21 +184,21 @@
             this.list_Compromissos.Size = new System.Drawing.Size(624, 259);
             this.list_Compromissos.TabIndex = 0;
             // 
-            // ListagemTarefa
+            // TelaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(650, 389);
+            this.ClientSize = new System.Drawing.Size(780, 389);
             this.Controls.Add(this.tabControl1);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "ListagemTarefa";
+            this.Name = "TelaPrincipal";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "E-Agenda";
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
+            this.tabTarefa.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -249,20 +207,17 @@
 
         #endregion
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.ListBox list_Tarefas;
+        private System.Windows.Forms.TabPage tabTarefa;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.ListBox list_Contatos;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.ListBox list_Compromissos;
-        private System.Windows.Forms.Button btn_InserirTarefa;
-        private System.Windows.Forms.Button btn_ExcluirTarefa;
-        private System.Windows.Forms.Button btn_EditarTarefa;
         private System.Windows.Forms.Button btn_ExcluirContato;
         private System.Windows.Forms.Button btn_EditarContato;
         private System.Windows.Forms.Button btn_InserirContato;
         private System.Windows.Forms.Button btn_ExcluirCompromisso;
         private System.Windows.Forms.Button btn_EditarCompromisso;
         private System.Windows.Forms.Button btn_InserirCompromisso;
+        private System.Windows.Forms.Panel panel_Tarefas;
     }
 }

@@ -1,22 +1,43 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
+
 
 namespace e_agenda.WinApp
 {
     public class RepositorioTarefa
     {
-        List<Tarefa> tarefas = new List<Tarefa>();
+        private readonly ISerializadorTarefas serializador;
+        List<Tarefa> tarefas;
         private int contador = 0;
-        public List<Tarefa> SelecionarTodos()
+
+        public RepositorioTarefa(ISerializadorTarefas serializador)
         {
+           // tarefas = new List<Tarefa>();
+            
+            this.serializador = serializador;
+           
+                tarefas = serializador.CarregarTarefasDoArquivo();
+            
+                if(tarefas.Count > 0)
+                    contador = tarefas.Max(x => x.Numero);
+           
+        }
+
+
+        public List<Tarefa> SelecionarTodos()
+        {           
             return tarefas;
         }
 
+        
         public void Inserir(Tarefa novaTarefa)
         {
             novaTarefa.Numero = ++contador;
             tarefas.Add(novaTarefa);
+
+            serializador.GravarTarefasEmArquivo(tarefas);
         }
+
 
         public void Editar(Tarefa tarefa)
         {
@@ -28,11 +49,41 @@ namespace e_agenda.WinApp
                     break;
                 }
             }
+
+            serializador.GravarTarefasEmArquivo(tarefas);
         }
 
         public void Excluir(Tarefa tarefa)
         {
             tarefas.Remove(tarefa);
+
+            serializador.GravarTarefasEmArquivo(tarefas);
         }
+
+        public void AdicionarItens(Tarefa tarefaSelecionada, List<ItemTarefa> itens)
+        {
+            foreach (var item in itens)
+            {
+                tarefaSelecionada.AdicionarItem(item);
+            }
+            serializador.GravarTarefasEmArquivo(tarefas);
+        }
+
+        public void AtualizarItens(Tarefa tarefaSelecionada, List<ItemTarefa> itensConcluidos, List<ItemTarefa> itensPendentes)
+        {
+            foreach (var item in itensConcluidos)
+            {
+                tarefaSelecionada.ConcluirItem(item);
+            }
+
+            foreach (var item in itensPendentes)
+            {
+                tarefaSelecionada.MarcarPendente(item);
+            }
+
+            serializador.GravarTarefasEmArquivo(tarefas);
+        }
+      
+
     }
 }

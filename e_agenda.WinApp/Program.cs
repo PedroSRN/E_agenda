@@ -17,7 +17,7 @@ namespace e_agenda.WinApp
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ListagemTarefa());
+            Application.Run(new TelaPrincipal());
         }
     }
 }
