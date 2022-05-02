@@ -16,7 +16,8 @@ namespace e_agenda.WinApp
         
         public ListagemTarefas(RepositorioTarefa  repositorioTarefa)
         {
-            SerializadorTarefasEmBinario serializador = new SerializadorTarefasEmBinario();
+            // SerializadorTarefasEmBinario serializador = new SerializadorTarefasEmBinario();
+            SerializadorTarefasEmXml serializador = new SerializadorTarefasEmXml();
 
             this.repositorioTarefa = new RepositorioTarefa(serializador);
 

@@ -5,9 +5,9 @@ namespace e_agenda.WinApp
     [Serializable]
     public class ItemTarefa
     {
-        public string Titulo { get; internal set; }
+        public string Titulo { get;  set; }
        
-        public bool Concluido { get; private set; }
+        public bool Concluido { get; set; }
 
         public override string ToString()
         {
