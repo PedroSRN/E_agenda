@@ -13,7 +13,8 @@ namespace e_agenda.WinApp
     public partial class TelaPrincipal : Form
     {
         //Tarefas
-        private readonly ISerializadorTarefas serializador = new SerializadorTarefasEmBinario();
+        // private readonly ISerializadorTarefas serializador = new SerializadorTarefasEmBinario();
+        private readonly ISerializadorTarefas serializador = new SerializadorTarefasEmXml();
         private readonly RepositorioTarefa repositorioTarefa;
        
         private readonly ListagemTarefas tarefas;

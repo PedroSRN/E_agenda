@@ -9,7 +9,7 @@ namespace e_agenda.WinApp
     public interface ISerializadorTarefas
     {
         List<Tarefa> CarregarTarefasDoArquivo();
-       
+
         void GravarTarefasEmArquivo(List<Tarefa> tarefas);    
     }
 }

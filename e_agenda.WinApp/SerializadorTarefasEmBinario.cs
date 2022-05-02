@@ -12,20 +12,7 @@ namespace e_agenda.WinApp
     {
 
         private const string arquivoTarefas = @"D:\temp\tarefas.bin";
-        
 
-        public void GravarTarefasEmArquivo(List<Tarefa> tarefas)
-        {
-            BinaryFormatter serializador = new BinaryFormatter();
-
-            MemoryStream ms = new MemoryStream();
-
-            serializador.Serialize(ms, tarefas);
-
-            byte[] bytesTarefa = ms.ToArray();
-
-            File.WriteAllBytes(arquivoTarefas, bytesTarefa);
-        }
         public List<Tarefa> CarregarTarefasDoArquivo()
         {
             if (File.Exists(arquivoTarefas) == false)
@@ -41,5 +28,18 @@ namespace e_agenda.WinApp
 
             return (List<Tarefa>)serializador.Deserialize(ms);
         }
+        public void GravarTarefasEmArquivo(List<Tarefa> tarefas)
+        {
+            BinaryFormatter serializador = new BinaryFormatter();
+
+            MemoryStream ms = new MemoryStream();
+
+            serializador.Serialize(ms, tarefas);
+
+            byte[] bytesTarefa = ms.ToArray();
+
+            File.WriteAllBytes(arquivoTarefas, bytesTarefa);
+        }
+       
     }
 }
