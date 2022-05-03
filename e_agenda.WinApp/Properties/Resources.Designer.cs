@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace e_agenda.WinApp.Properties {
+namespace e_agenda.Dominio.Properties {
     using System;
     
     

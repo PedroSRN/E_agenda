@@ -1,25 +1,24 @@
-﻿using System;
+﻿using e_agenda.Dominio;
+using e_agenda.Infra.Arquivos;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows.Forms;
 
+//namespace e_agenda.Dominio
 namespace e_agenda.WinApp
+
 {
     public partial class ListagemTarefas : UserControl
     {
-        RepositorioTarefa repositorioTarefa;
+        IRepositorioTarefa repositorioTarefa;
         
-        public ListagemTarefas(RepositorioTarefa  repositorioTarefa)
+        public ListagemTarefas(RepositorioTarefaEmArquivo  repositorioTarefa)
         {
             // SerializadorTarefasEmBinario serializador = new SerializadorTarefasEmBinario();
             SerializadorTarefasEmXml serializador = new SerializadorTarefasEmXml();
 
-            this.repositorioTarefa = new RepositorioTarefa(serializador);
+            this.repositorioTarefa = new RepositorioTarefaEmArquivo(serializador);
 
             InitializeComponent();
             CarregarTarefas();
@@ -28,13 +27,22 @@ namespace e_agenda.WinApp
 
         public void CarregarTarefas()
         {
-            List<Tarefa> tarefa = repositorioTarefa.SelecionarTodos();
+            List<Tarefa> tarefasConcluidas = repositorioTarefa.SelecionarTarefasConcluidas();
 
-            list_Tarefas.Items.Clear();
+            list_TarefasConcluidas.Items.Clear();
 
-            foreach (Tarefa t in tarefa)
+            foreach (Tarefa t in tarefasConcluidas)
             {
-                list_Tarefas.Items.Add(t);
+                list_TarefasConcluidas.Items.Add(t);
+            }
+
+            List<Tarefa> tarefasPendentes = repositorioTarefa.SelecionarTarefasPendentes();
+
+            list_TarefasPendentes.Items.Clear();
+
+            foreach (Tarefa t in tarefasPendentes)
+            {
+                list_TarefasPendentes.Items.Add(t);
             }
         }
 
@@ -55,7 +63,7 @@ namespace e_agenda.WinApp
 
         private void btn_EditarTarefa_Click(object sender, EventArgs e)
         {
-            Tarefa tarefaSelecionada = (Tarefa)list_Tarefas.SelectedItem;
+            Tarefa tarefaSelecionada = (Tarefa)list_TarefasPendentes.SelectedItem;
             if (tarefaSelecionada == null)
             {
                 MessageBox.Show("Selecione uma tarefa primeiro",
@@ -77,7 +85,7 @@ namespace e_agenda.WinApp
 
         private void btn_ExcluirTarefa_Click(object sender, EventArgs e)
         {
-            Tarefa tarefaSelecionada = (Tarefa)list_Tarefas.SelectedItem;
+            Tarefa tarefaSelecionada = (Tarefa)list_TarefasPendentes.SelectedItem;
 
             if (tarefaSelecionada == null)
             {
@@ -98,7 +106,7 @@ namespace e_agenda.WinApp
         }
         private void btn_AdicionarItens_Click(object sender, EventArgs e)
         {
-            Tarefa tarefaSelecionada = (Tarefa)list_Tarefas.SelectedItem;
+            Tarefa tarefaSelecionada = (Tarefa)list_TarefasPendentes.SelectedItem;
 
             if (tarefaSelecionada == null)
             {
@@ -121,7 +129,7 @@ namespace e_agenda.WinApp
 
         private void btn_AtualizarItens_Click(object sender, EventArgs e)
         {
-            Tarefa tarefaSelecionada = (Tarefa)list_Tarefas.SelectedItem;
+            Tarefa tarefaSelecionada = (Tarefa)list_TarefasPendentes.SelectedItem;
 
             if (tarefaSelecionada == null)
             {

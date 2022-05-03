@@ -1,4 +1,5 @@
-﻿namespace e_agenda.{
+﻿namespace e_agenda.WinApp
+{
     partial class TelaPrincipal
     {
         /// <summary>

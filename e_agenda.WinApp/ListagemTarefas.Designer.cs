@@ -31,9 +31,16 @@
             this.btn_ExcluirTarefa = new System.Windows.Forms.Button();
             this.btn_EditarTarefa = new System.Windows.Forms.Button();
             this.btn_InserirTarefa = new System.Windows.Forms.Button();
-            this.list_Tarefas = new System.Windows.Forms.ListBox();
+            this.list_TarefasPendentes = new System.Windows.Forms.ListBox();
             this.btn_AdicionarItens = new System.Windows.Forms.Button();
             this.btn_AtualizarItens = new System.Windows.Forms.Button();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.list_TarefasConcluidas = new System.Windows.Forms.ListBox();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_ExcluirTarefa
@@ -66,18 +73,18 @@
             this.btn_InserirTarefa.UseVisualStyleBackColor = true;
             this.btn_InserirTarefa.Click += new System.EventHandler(this.btn_InserirTarefa_Click);
             // 
-            // list_Tarefas
+            // list_TarefasPendentes
             // 
-            this.list_Tarefas.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
-            this.list_Tarefas.BackColor = System.Drawing.SystemColors.Window;
-            this.list_Tarefas.FormattingEnabled = true;
-            this.list_Tarefas.ItemHeight = 15;
-            this.list_Tarefas.Location = new System.Drawing.Point(3, 94);
-            this.list_Tarefas.Name = "list_Tarefas";
-            this.list_Tarefas.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.list_Tarefas.ScrollAlwaysVisible = true;
-            this.list_Tarefas.Size = new System.Drawing.Size(736, 259);
-            this.list_Tarefas.TabIndex = 4;
+            this.list_TarefasPendentes.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
+            this.list_TarefasPendentes.BackColor = System.Drawing.SystemColors.Window;
+            this.list_TarefasPendentes.FormattingEnabled = true;
+            this.list_TarefasPendentes.ItemHeight = 15;
+            this.list_TarefasPendentes.Location = new System.Drawing.Point(0, 0);
+            this.list_TarefasPendentes.Name = "list_TarefasPendentes";
+            this.list_TarefasPendentes.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.list_TarefasPendentes.ScrollAlwaysVisible = true;
+            this.list_TarefasPendentes.Size = new System.Drawing.Size(734, 229);
+            this.list_TarefasPendentes.TabIndex = 4;
             // 
             // btn_AdicionarItens
             // 
@@ -99,18 +106,62 @@
             this.btn_AtualizarItens.UseVisualStyleBackColor = true;
             this.btn_AtualizarItens.Click += new System.EventHandler(this.btn_AtualizarItens_Click);
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(3, 106);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(745, 257);
+            this.tabControl1.TabIndex = 10;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.list_TarefasPendentes);
+            this.tabPage1.Location = new System.Drawing.Point(4, 24);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(737, 229);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Tarefas Pendentes";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.list_TarefasConcluidas);
+            this.tabPage2.Location = new System.Drawing.Point(4, 24);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(737, 229);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Tarefas Concluidas";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // list_TarefasConcluidas
+            // 
+            this.list_TarefasConcluidas.FormattingEnabled = true;
+            this.list_TarefasConcluidas.ItemHeight = 15;
+            this.list_TarefasConcluidas.Location = new System.Drawing.Point(0, 1);
+            this.list_TarefasConcluidas.Name = "list_TarefasConcluidas";
+            this.list_TarefasConcluidas.Size = new System.Drawing.Size(737, 229);
+            this.list_TarefasConcluidas.TabIndex = 0;
+            // 
             // ListagemTarefas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.btn_AtualizarItens);
             this.Controls.Add(this.btn_AdicionarItens);
             this.Controls.Add(this.btn_ExcluirTarefa);
             this.Controls.Add(this.btn_EditarTarefa);
             this.Controls.Add(this.btn_InserirTarefa);
-            this.Controls.Add(this.list_Tarefas);
             this.Name = "ListagemTarefas";
             this.Size = new System.Drawing.Size(773, 375);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -120,8 +171,12 @@
         private System.Windows.Forms.Button btn_ExcluirTarefa;
         private System.Windows.Forms.Button btn_EditarTarefa;
         private System.Windows.Forms.Button btn_InserirTarefa;
-        private System.Windows.Forms.ListBox list_Tarefas;
+        private System.Windows.Forms.ListBox list_TarefasPendentes;
         private System.Windows.Forms.Button btn_AdicionarItens;
         private System.Windows.Forms.Button btn_AtualizarItens;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.ListBox list_TarefasConcluidas;
     }
 }

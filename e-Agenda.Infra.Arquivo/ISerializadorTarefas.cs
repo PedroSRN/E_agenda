@@ -1,10 +1,8 @@
-﻿using System;
+﻿using e_agenda.Dominio;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace e_agenda.WinApp
+
+namespace e_agenda.Infra.Arquivos
 {
     public interface ISerializadorTarefas
     {

@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "e-agenda.ConsoleApp", "e-ag
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "e-Agenda.Dominio", "e-Agenda.Dominio\e-Agenda.Dominio.csproj", "{9DB0217E-1CD1-45F2-8BC3-1D6932A12542}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3-Infra", "3-Infra", "{DE1C0D0D-75D8-4F69-9A18-E72B1794256D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "e-Agenda.Infra.Arquivo", "e-Agenda.Infra.Arquivo\e-Agenda.Infra.Arquivo.csproj", "{6A8D8E09-6AC2-4292-A413-304B07245672}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +35,10 @@ Global
 		{9DB0217E-1CD1-45F2-8BC3-1D6932A12542}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DB0217E-1CD1-45F2-8BC3-1D6932A12542}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9DB0217E-1CD1-45F2-8BC3-1D6932A12542}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A8D8E09-6AC2-4292-A413-304B07245672}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A8D8E09-6AC2-4292-A413-304B07245672}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A8D8E09-6AC2-4292-A413-304B07245672}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A8D8E09-6AC2-4292-A413-304B07245672}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -38,6 +46,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{DC440CEF-B9D2-42FC-BD24-89177CE4260D} = {D0E30F00-96A2-410A-9F45-B04AA37EE77A}
 		{531AC766-4C49-4C0B-B774-0B93BA3837B5} = {D0E30F00-96A2-410A-9F45-B04AA37EE77A}
+		{9DB0217E-1CD1-45F2-8BC3-1D6932A12542} = {26E4B50C-FD3A-4E35-BBF7-65617EF08693}
+		{6A8D8E09-6AC2-4292-A413-304B07245672} = {DE1C0D0D-75D8-4F69-9A18-E72B1794256D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {831601CE-6EB7-4A34-ACE1-8904B635F19A}

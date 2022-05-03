@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\e-Agenda.Dominio\e-Agenda.Dominio.csproj" />
+    <ProjectReference Include="..\e-Agenda.Infra.Arquivo\e-Agenda.Infra.Arquivo.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace e_agenda.WinApp
+namespace e_agenda.Dominio
 {
     [Serializable]
     public class ItemTarefa

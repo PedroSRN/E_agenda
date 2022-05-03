@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace e_agenda.WinApp
+namespace e_agenda.Dominio
 {
     [Serializable]
     public class Tarefa

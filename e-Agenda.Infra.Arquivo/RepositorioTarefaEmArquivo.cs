@@ -1,35 +1,36 @@
-﻿using System.Collections.Generic;
+﻿using e_agenda.Dominio;
+using System.Collections.Generic;
 using System.Linq;
 
 
-namespace e_agenda.WinApp
+namespace e_agenda.Infra.Arquivos
 {
-    public class RepositorioTarefa
+    public class RepositorioTarefaEmArquivo: IRepositorioTarefa
     {
         private readonly ISerializadorTarefas serializador;
         List<Tarefa> tarefas;
         private int contador = 0;
 
-        public RepositorioTarefa(ISerializadorTarefas serializador)
+        public RepositorioTarefaEmArquivo(ISerializadorTarefas serializador)
         {
-           // tarefas = new List<Tarefa>();
-            
+            // tarefas = new List<Tarefa>();
+
             this.serializador = serializador;
-           
-                tarefas = serializador.CarregarTarefasDoArquivo();
-            
-                if(tarefas.Count > 0)
-                    contador = tarefas.Max(x => x.Numero);
-           
+
+            tarefas = serializador.CarregarTarefasDoArquivo();
+
+            if (tarefas.Count > 0)
+                contador = tarefas.Max(x => x.Numero);
+
         }
 
 
         public List<Tarefa> SelecionarTodos()
-        {           
+        {
             return tarefas;
         }
 
-        
+
         public void Inserir(Tarefa novaTarefa)
         {
             novaTarefa.Numero = ++contador;
@@ -83,7 +84,16 @@ namespace e_agenda.WinApp
 
             serializador.GravarTarefasEmArquivo(tarefas);
         }
-      
+        public List<Tarefa> SelecionarTarefasConcluidas()
+        {
+            return tarefas.Where(x => x.CalcularPercentualConcluido() == 100).ToList();
+        }
 
+        public List<Tarefa> SelecionarTarefasPendentes()
+        {
+            return tarefas.Where(x => x.CalcularPercentualConcluido() < 100).ToList();
+        }
+
+       
     }
 }

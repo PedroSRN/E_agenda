@@ -1,16 +1,18 @@
-﻿using System;
+﻿using e_agenda.Dominio;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Serialization;
 
-namespace e_agenda.WinApp
+namespace e_agenda.Infra.Arquivos
 {
-    public class SerializadorTarefasEmXml : ISerializadorTarefas
+    public class SerializadorTarefasEmBinario : ISerializadorTarefas
     {
-        private const string arquivoTarefas = @"D:\temp\tarefas.xml";
+
+        private const string arquivoTarefas = @"D:\temp\tarefas.bin";
 
         public List<Tarefa> CarregarTarefasDoArquivo()
         {
@@ -19,7 +21,7 @@ namespace e_agenda.WinApp
                 return new List<Tarefa>();
             }
 
-            XmlSerializer serializador = new XmlSerializer(typeof(List<Tarefa>));
+            BinaryFormatter serializador = new BinaryFormatter();
 
             byte[] bytesTarefa = File.ReadAllBytes(arquivoTarefas);
 
@@ -27,11 +29,10 @@ namespace e_agenda.WinApp
 
             return (List<Tarefa>)serializador.Deserialize(ms);
         }
-
         public void GravarTarefasEmArquivo(List<Tarefa> tarefas)
         {
-           XmlSerializer serializador = new XmlSerializer(typeof(List<Tarefa>));
-            
+            BinaryFormatter serializador = new BinaryFormatter();
+
             MemoryStream ms = new MemoryStream();
 
             serializador.Serialize(ms, tarefas);
@@ -39,7 +40,7 @@ namespace e_agenda.WinApp
             byte[] bytesTarefa = ms.ToArray();
 
             File.WriteAllBytes(arquivoTarefas, bytesTarefa);
-
         }
+       
     }
 }

@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using e_agenda.Infra.Arquivos;
 using System.Windows.Forms;
 
 namespace e_agenda.WinApp
@@ -15,7 +8,7 @@ namespace e_agenda.WinApp
         //Tarefas
         // private readonly ISerializadorTarefas serializador = new SerializadorTarefasEmBinario();
         private readonly ISerializadorTarefas serializador = new SerializadorTarefasEmXml();
-        private readonly RepositorioTarefa repositorioTarefa;
+        private readonly RepositorioTarefaEmArquivo repositorioTarefa;
        
         private readonly ListagemTarefas tarefas;
         
@@ -29,7 +22,7 @@ namespace e_agenda.WinApp
            
             // Painel Tarefas
 
-            repositorioTarefa = new RepositorioTarefa(serializador) ;
+            repositorioTarefa = new RepositorioTarefaEmArquivo(serializador) ;
             tarefas = new ListagemTarefas(repositorioTarefa);
             panel_Tarefas.Controls.Add(tarefas);
             //-------------------------------------------
