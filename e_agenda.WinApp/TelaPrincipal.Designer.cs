@@ -32,15 +32,12 @@
             this.tabTarefa = new System.Windows.Forms.TabPage();
             this.panel_Tarefas = new System.Windows.Forms.Panel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.btn_ExcluirContato = new System.Windows.Forms.Button();
-            this.btn_EditarContato = new System.Windows.Forms.Button();
-            this.btn_InserirContato = new System.Windows.Forms.Button();
-            this.list_Contatos = new System.Windows.Forms.ListBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.btn_ExcluirCompromisso = new System.Windows.Forms.Button();
             this.btn_EditarCompromisso = new System.Windows.Forms.Button();
             this.btn_InserirCompromisso = new System.Windows.Forms.Button();
             this.list_Compromissos = new System.Windows.Forms.ListBox();
+            this.panel_Contatos = new System.Windows.Forms.Panel();
             this.tabControl1.SuspendLayout();
             this.tabTarefa.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -83,10 +80,7 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.MediumPurple;
-            this.tabPage2.Controls.Add(this.btn_ExcluirContato);
-            this.tabPage2.Controls.Add(this.btn_EditarContato);
-            this.tabPage2.Controls.Add(this.btn_InserirContato);
-            this.tabPage2.Controls.Add(this.list_Contatos);
+            this.tabPage2.Controls.Add(this.panel_Contatos);
             this.tabPage2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.tabPage2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.tabPage2.Location = new System.Drawing.Point(4, 24);
@@ -95,43 +89,6 @@
             this.tabPage2.Size = new System.Drawing.Size(772, 361);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Contatos";
-            // 
-            // btn_ExcluirContato
-            // 
-            this.btn_ExcluirContato.Location = new System.Drawing.Point(412, 35);
-            this.btn_ExcluirContato.Name = "btn_ExcluirContato";
-            this.btn_ExcluirContato.Size = new System.Drawing.Size(131, 40);
-            this.btn_ExcluirContato.TabIndex = 6;
-            this.btn_ExcluirContato.Text = "EXCLUIR";
-            this.btn_ExcluirContato.UseVisualStyleBackColor = true;
-            // 
-            // btn_EditarContato
-            // 
-            this.btn_EditarContato.Location = new System.Drawing.Point(206, 35);
-            this.btn_EditarContato.Name = "btn_EditarContato";
-            this.btn_EditarContato.Size = new System.Drawing.Size(131, 40);
-            this.btn_EditarContato.TabIndex = 5;
-            this.btn_EditarContato.Text = "EDITAR";
-            this.btn_EditarContato.UseVisualStyleBackColor = true;
-            // 
-            // btn_InserirContato
-            // 
-            this.btn_InserirContato.Location = new System.Drawing.Point(8, 35);
-            this.btn_InserirContato.Name = "btn_InserirContato";
-            this.btn_InserirContato.Size = new System.Drawing.Size(131, 40);
-            this.btn_InserirContato.TabIndex = 4;
-            this.btn_InserirContato.Text = "INSERIR";
-            this.btn_InserirContato.UseVisualStyleBackColor = true;
-            // 
-            // list_Contatos
-            // 
-            this.list_Contatos.FormattingEnabled = true;
-            this.list_Contatos.ItemHeight = 15;
-            this.list_Contatos.Location = new System.Drawing.Point(8, 94);
-            this.list_Contatos.Name = "list_Contatos";
-            this.list_Contatos.ScrollAlwaysVisible = true;
-            this.list_Contatos.Size = new System.Drawing.Size(624, 259);
-            this.list_Contatos.TabIndex = 0;
             // 
             // tabPage3
             // 
@@ -184,6 +141,13 @@
             this.list_Compromissos.Size = new System.Drawing.Size(624, 259);
             this.list_Compromissos.TabIndex = 0;
             // 
+            // panel_Contatos
+            // 
+            this.panel_Contatos.Location = new System.Drawing.Point(3, 3);
+            this.panel_Contatos.Name = "panel_Contatos";
+            this.panel_Contatos.Size = new System.Drawing.Size(769, 362);
+            this.panel_Contatos.TabIndex = 0;
+            // 
             // TelaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -209,15 +173,12 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabTarefa;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.ListBox list_Contatos;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.ListBox list_Compromissos;
-        private System.Windows.Forms.Button btn_ExcluirContato;
-        private System.Windows.Forms.Button btn_EditarContato;
-        private System.Windows.Forms.Button btn_InserirContato;
         private System.Windows.Forms.Button btn_ExcluirCompromisso;
         private System.Windows.Forms.Button btn_EditarCompromisso;
         private System.Windows.Forms.Button btn_InserirCompromisso;
         private System.Windows.Forms.Panel panel_Tarefas;
+        private System.Windows.Forms.Panel panel_Contatos;
     }
 }
