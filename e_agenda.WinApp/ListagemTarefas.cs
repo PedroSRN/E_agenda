@@ -36,7 +36,7 @@ namespace e_agenda.WinApp
                 list_TarefasConcluidas.Items.Add(t);
             }
 
-            List<Tarefa> tarefasPendentes = repositorioTarefa.SelecionarTarefasPendentes();
+            List<Tarefa> tarefasPendentes = repositorioTarefa.SelecionarTarefasPendentes(); 
 
             list_TarefasPendentes.Items.Clear();
 
