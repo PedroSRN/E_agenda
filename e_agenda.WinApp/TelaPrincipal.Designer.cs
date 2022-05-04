@@ -32,12 +32,9 @@
             this.tabTarefa = new System.Windows.Forms.TabPage();
             this.panel_Tarefas = new System.Windows.Forms.Panel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.btn_ExcluirCompromisso = new System.Windows.Forms.Button();
-            this.btn_EditarCompromisso = new System.Windows.Forms.Button();
-            this.btn_InserirCompromisso = new System.Windows.Forms.Button();
-            this.list_Compromissos = new System.Windows.Forms.ListBox();
             this.panel_Contatos = new System.Windows.Forms.Panel();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.panel_Compromissos = new System.Windows.Forms.Panel();
             this.tabControl1.SuspendLayout();
             this.tabTarefa.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -90,13 +87,17 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Contatos";
             // 
+            // panel_Contatos
+            // 
+            this.panel_Contatos.Location = new System.Drawing.Point(3, 3);
+            this.panel_Contatos.Name = "panel_Contatos";
+            this.panel_Contatos.Size = new System.Drawing.Size(769, 362);
+            this.panel_Contatos.TabIndex = 0;
+            // 
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.YellowGreen;
-            this.tabPage3.Controls.Add(this.btn_ExcluirCompromisso);
-            this.tabPage3.Controls.Add(this.btn_EditarCompromisso);
-            this.tabPage3.Controls.Add(this.btn_InserirCompromisso);
-            this.tabPage3.Controls.Add(this.list_Compromissos);
+            this.tabPage3.Controls.Add(this.panel_Compromissos);
             this.tabPage3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.tabPage3.Location = new System.Drawing.Point(4, 24);
             this.tabPage3.Name = "tabPage3";
@@ -104,49 +105,12 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Compromissos";
             // 
-            // btn_ExcluirCompromisso
+            // panel_Compromissos
             // 
-            this.btn_ExcluirCompromisso.Location = new System.Drawing.Point(412, 36);
-            this.btn_ExcluirCompromisso.Name = "btn_ExcluirCompromisso";
-            this.btn_ExcluirCompromisso.Size = new System.Drawing.Size(131, 40);
-            this.btn_ExcluirCompromisso.TabIndex = 6;
-            this.btn_ExcluirCompromisso.Text = "EXCLUIR";
-            this.btn_ExcluirCompromisso.UseVisualStyleBackColor = true;
-            // 
-            // btn_EditarCompromisso
-            // 
-            this.btn_EditarCompromisso.Location = new System.Drawing.Point(206, 36);
-            this.btn_EditarCompromisso.Name = "btn_EditarCompromisso";
-            this.btn_EditarCompromisso.Size = new System.Drawing.Size(131, 40);
-            this.btn_EditarCompromisso.TabIndex = 5;
-            this.btn_EditarCompromisso.Text = "EDITAR";
-            this.btn_EditarCompromisso.UseVisualStyleBackColor = true;
-            // 
-            // btn_InserirCompromisso
-            // 
-            this.btn_InserirCompromisso.Location = new System.Drawing.Point(8, 36);
-            this.btn_InserirCompromisso.Name = "btn_InserirCompromisso";
-            this.btn_InserirCompromisso.Size = new System.Drawing.Size(131, 40);
-            this.btn_InserirCompromisso.TabIndex = 4;
-            this.btn_InserirCompromisso.Text = "INSERIR";
-            this.btn_InserirCompromisso.UseVisualStyleBackColor = true;
-            // 
-            // list_Compromissos
-            // 
-            this.list_Compromissos.FormattingEnabled = true;
-            this.list_Compromissos.ItemHeight = 15;
-            this.list_Compromissos.Location = new System.Drawing.Point(8, 94);
-            this.list_Compromissos.Name = "list_Compromissos";
-            this.list_Compromissos.ScrollAlwaysVisible = true;
-            this.list_Compromissos.Size = new System.Drawing.Size(624, 259);
-            this.list_Compromissos.TabIndex = 0;
-            // 
-            // panel_Contatos
-            // 
-            this.panel_Contatos.Location = new System.Drawing.Point(3, 3);
-            this.panel_Contatos.Name = "panel_Contatos";
-            this.panel_Contatos.Size = new System.Drawing.Size(769, 362);
-            this.panel_Contatos.TabIndex = 0;
+            this.panel_Compromissos.Location = new System.Drawing.Point(3, 3);
+            this.panel_Compromissos.Name = "panel_Compromissos";
+            this.panel_Compromissos.Size = new System.Drawing.Size(769, 355);
+            this.panel_Compromissos.TabIndex = 0;
             // 
             // TelaPrincipal
             // 
@@ -174,11 +138,8 @@
         private System.Windows.Forms.TabPage tabTarefa;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.ListBox list_Compromissos;
-        private System.Windows.Forms.Button btn_ExcluirCompromisso;
-        private System.Windows.Forms.Button btn_EditarCompromisso;
-        private System.Windows.Forms.Button btn_InserirCompromisso;
         private System.Windows.Forms.Panel panel_Tarefas;
         private System.Windows.Forms.Panel panel_Contatos;
+        private System.Windows.Forms.Panel panel_Compromissos;
     }
 }
